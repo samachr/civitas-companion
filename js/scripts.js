@@ -24,10 +24,17 @@ const buildings = [
   {id: 'metalrefinery', name: 'Metal Refinery', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'mine', value: 2}], provides: 'metalrefinery', wages: [{type: 'money', value: 20}, {type: 'rock', value: 5}]},
   {id: 'gemrefinery', name: 'Gem Refinery', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'quarry', value: 2}], provides: 'gemrefinery', wages: [{type: 'money', value: 20}, {type: 'rock', value: 5}]},
   {id: 'sawmill', name: 'Sawmill', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'treenursery', value: 2}], provides: 'sawmill', wages: [{type: 'money', value: 20}, {type: 'wood', value: 5}]},
-  {id: 'foodprocesssor', name: 'Food Processor', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'farm', value: 2}], provides: 'foodprocesssor', wages: [{type: 'money', value: 20}, {type: 'food', value: 5}]},
+  {id: 'foodprocessor', name: 'Food Processor', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'farm', value: 2}], provides: 'foodprocessor', wages: [{type: 'money', value: 20}, {type: 'food', value: 5}]},
   {id: 'slaughterhouse', name: 'Slaughter House', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'ranch', value: 2}], provides: 'slaughterhouse', wages: [{type: 'money', value: 20}, {type: 'food', value: 5}]},
   {id: 'textilefactory', name: 'Textile Factory', max: 1, cost: [{type: 'money', value: 50}], requirements: [{type: 'cottonmill', value: 2}], provides: 'textilefactory', wages: [{type: 'money', value: 20}, {type: 'cotton', value: 5}]},
-
+  {id: 'hardwarestore', name: 'Hardware Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'sawmill', value: 1}, { type: 'metalrefinery', value: 1}, {type: 'slaughterhouse', value: 1}], provides: 'hardwarestore', wages: [{type: 'money', value: 100}, {type: 'rock', value: 10}]},
+  {id: 'jewelrystore', name: 'Jewelry Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'metalrefinery', value: 1}, { type: 'gemrefinery', value: 1}, {type: 'textilefactory', value: 1}], provides: 'jewelrystore', wages: [{type: 'money', value: 150}]},
+  {id: 'lumberstore', name: 'Lumber Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'sawmill', value: 1}, { type: 'metalrefinery', value: 1}, {type: 'gemrefinery', value: 1}], provides: 'lumberstore', wages: [{type: 'money', value: 100}, {type: 'wood', value: 10}]},
+  {id: 'grocerystore', name: 'Grocery Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'sawmill', value: 1}, { type: 'slaughterhouse', value: 1}, {type: 'foodprocessor', value: 1}], provides: 'grocerystore', wages: [{type: 'money', value: 150}]},
+  {id: 'butchershop', name: 'Butcher Shop', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'metalrefinery', value: 1}, { type: 'slaughterhouse', value: 1}, {type: 'foodprocessor', value: 1}], provides: 'butchershop', wages: [{type: 'money', value: 150}]},
+  {id: 'restaurant', name: 'Restaurant', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'textilefactory', value: 1}, { type: 'slaughterhouse', value: 1}, {type: 'foodprocessor', value: 1}], provides: 'restaurant', wages: [{type: 'money', value: 100}, {type: 'food', value: 10}]},
+  {id: 'furniturestore', name: 'Furniture Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'sawmill', value: 1}, { type: 'gemrefinery', value: 1}, {type: 'textilefactory', value: 1}], provides: 'furniturestore', wages: [{type: 'money', value: 150}]},
+  {id: 'departmentstore', name: 'Department Store', max: 1, cost: [{type: 'money', value: 200}], requirements: [{type: 'gemrefinery', value: 1}, { type: 'textilefactory', value: 1}, {type: 'foodprocessor', value: 1}], provides: 'departmentstore', wages: [{type: 'money', value: 100}, {type: 'cotton', value: 10}]},
 ]
 
 class Civitas {
@@ -128,6 +135,7 @@ catch(err) {
       const buildingElement = document.createElement('div');
       buildingElement.innerHTML = `
         <span class="name">${building.name}</span>
+        <hr />
       `;
       buildingElement.id = building.id;
       buildingElement.className = 'building';
