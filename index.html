@@ -9,10 +9,20 @@
   <meta name="description" content="civitas board game companion site">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
-
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <div class="resources">
+      <div class="resource"><img src="/images/money.png" alt="money" /><span id="money">0</span></div>
+      <div class="resource"><img src="/images/rock.png" alt="rock" /><span id="rock">0</span></div>
+      <div class="resource"><img src="/images/wood.jpg" alt="wood" /><span id="wood">0</span></div>
+      <div class="resource"><img src="/images/food.png" alt="food" /><span id="food">0</span></div>
+      <div class="resource"><img src="/images/cotton.png" alt="cotton" /><span id="cotton">0</span></div>
+      <div class="resource">Workers: <span id="worker">1</span><button onclick="civitas.buyWorker()">Buy</button></div>
+    </div>
+    <div id="buildings" class="buildings"></div>
+  </div>
   <script src="js/scripts.js"></script>
 </body>
 </html>

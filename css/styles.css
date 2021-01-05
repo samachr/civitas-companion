@@ -1,0 +1,64 @@
+html, head, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.buildings {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.building {
+  padding: 20px;
+  box-shadow: 2px 2px 8px 0px grey;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: gray;
+  max-height: 100px;
+  width: 100px;
+  height: 100px;
+}
+
+.affordable, .owned {
+  color: black;
+}
+
+button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.resources {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  box-shadow: -2px -2px 8px 0px grey;
+}
+
+.resource {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resource > img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.resource > span {
+  font-size: 32px;
+}
