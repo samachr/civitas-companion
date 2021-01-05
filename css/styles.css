@@ -16,6 +16,7 @@ html, head, body {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .building {
@@ -46,6 +47,7 @@ button {
   align-items: center;
   padding: 5px;
   box-shadow: -2px -2px 8px 0px grey;
+  flex-wrap: wrap;
 }
 
 .resource {
